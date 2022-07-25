@@ -1,0 +1,12 @@
+{
+    "_id": "_design/sessionStorage",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'session') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'session') { emit(doc._id, doc); } }"
+        }
+    }
+}

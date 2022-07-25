@@ -1,0 +1,15 @@
+{
+  "_id": "_design/duuzraAttendee",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) {\n    if (doc.type === 'duuzra-duuzra') {\n        for (var idx in doc.attendees) {\n            emit(null, doc.attendees[idx]);\n        }\n    }\n}"
+    },
+    "uuid": {
+      "map": "function(doc) {\n    if (doc.type === 'duuzra-duuzra') {\n        for (var idx in doc.attendees) {\n            emit(doc.attendees[idx].uuid, doc.attendees[idx]);\n        }\n    }\n}"
+    },
+    "duuzraId": {
+      "map": "function(doc) {\n    if (doc.type === 'duuzra-duuzra') {\n        for (var idx in doc.attendees) {\n            emit(doc._id, doc.attendees[idx]);\n        }\n    }\n}"
+    }
+  }
+}

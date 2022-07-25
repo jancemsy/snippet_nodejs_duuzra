@@ -1,0 +1,12 @@
+{
+    "_id": "_design/mediaPresentation",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { \n  if (doc.type == 'media-presentation') { \n    emit(doc._id, doc); \n  } \n}"
+        },
+        "id": {
+            "map": "function (doc) { \n  if (doc.type == 'media-presentation') { \n    emit(doc._id, doc); \n  } \n}"
+        }
+    }
+}

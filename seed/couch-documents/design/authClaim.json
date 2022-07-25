@@ -1,0 +1,12 @@
+{
+  "_id": "_design/authClaim",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) { if (doc.type == 'auth-user') { for(var idx in doc.claims) { emit(null, doc.claims[idx]);}}}"
+    },
+    "userId": {
+      "map": "function(doc) { if (doc.type == 'auth-user') { for(var idx in doc.claims) { emit(doc._id, doc.claims[idx]);}}}"
+    }
+  }
+}

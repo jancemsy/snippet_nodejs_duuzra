@@ -1,0 +1,13 @@
+{
+  "_id": "_design/mediaDocument",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function (doc) { \n  if (doc.type == 'media-document') { \n    emit(doc._id, doc); \n  } \n}"
+    },
+    "id": {
+      "map": "function (doc) { \n  if (doc.type == 'media-document') { \n    emit(doc._id, doc); \n  } \n}"
+    }
+  }
+
+}

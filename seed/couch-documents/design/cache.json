@@ -1,0 +1,12 @@
+{
+   "_id": "_design/cache",
+   "language": "javascript",
+   "views": {
+       "all": {
+           "map": "function (doc) { if (doc.type == 'cache-item') { emit(null, doc); } }"
+       },
+       "id": {
+           "map": "function (doc) { if (doc.type == 'cache-item') { emit(doc._id, doc); } }"
+       }
+   }
+}

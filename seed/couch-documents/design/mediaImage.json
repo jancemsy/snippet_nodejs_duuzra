@@ -1,0 +1,12 @@
+{
+  "_id": "_design/mediaImage",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function (doc) { \n  if (doc.type == 'media-image') {emit(null, doc);}}"
+    },
+    "id": {
+      "map": "function (doc) { \n  if (doc.type == 'media-image') {emit(doc._id, doc);}}"
+    }
+  }
+}

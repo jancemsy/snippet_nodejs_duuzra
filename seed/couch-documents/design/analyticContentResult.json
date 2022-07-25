@@ -1,0 +1,21 @@
+{
+    "_id": "_design/analyticContentResult",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'analytic-content-result') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'analytic-content-result') { emit(doc._id, doc); } }"
+        },
+        "userUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-content-result') { emit(doc.userUuid, doc); } }"
+        },
+        "duuzraUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-content-result') { emit(doc.duuzraUuid, doc); } }"
+        },
+        "contentUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-content-result') { emit(doc.contentUuid, doc); } }"
+        }
+    }
+}

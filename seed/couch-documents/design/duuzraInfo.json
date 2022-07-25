@@ -1,0 +1,24 @@
+{
+  "_id": "_design/duuzraInfo",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) {    if (doc.type == 'duuzra-duuzra') {        emit(null, {'id':doc._id,'info':doc.info});    }}"
+    },
+    "id": {
+      "map": "function(doc) {    if (doc.type == 'duuzra-duuzra') {        emit(doc._id, {'id':doc._id,'info':doc.info});    }}"
+    },
+    "accountUuid": {
+      "map": "function(doc) {    if (doc.type == 'duuzra-duuzra') {        emit(doc.info.accountUuid, {'id':doc._id,'info':doc.info});    }}"
+    },
+    "administratorUuid": {
+      "map": "function(doc) {\n    if (doc.type === 'duuzra-duuzra') {\n        for (var idx in doc.attendees) {\n          if(doc.attendees[idx].permissions.cmsEditEnabled || doc.attendees[idx].permissions.cmsAnalyticsEnabled || doc.attendees[idx].permissions.cmsSharingEnabled)\n            emit(doc.attendees[idx].authUuid, {\n                'id': doc._id,\n                'info': doc.info\n            });\n        }\n    }\n}"
+    },
+    "authUuid": {
+      "map": "function(doc) { if (doc.type === 'duuzra-duuzra') {for(var idx in doc.attendees) { emit(doc.attendees[idx].authUuid, {'id':doc._id,'info':doc.info});}}}"
+    },
+    "clientUuid": {
+      "map": "function(doc) { if (doc.type === 'duuzra-duuzra') { emit(doc.clientUuid, {'id':doc._id,'info':doc.info});}}"
+    }
+  }
+}

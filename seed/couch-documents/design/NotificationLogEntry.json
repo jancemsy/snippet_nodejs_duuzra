@@ -1,0 +1,15 @@
+{
+    "_id": "_design/notificationLogEntry",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'notification-log-entry') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'notification-log-entry') { emit(doc._id, doc); } }"
+        },
+        "recipientAttendeeUuid_duuzraUuid": {
+            "map": "function(doc) { if (doc.type == 'notification-log-entry') { emit([doc.recipientAttendeeUuid, doc.duuzraUuid], doc); } }"
+        }
+    }
+}

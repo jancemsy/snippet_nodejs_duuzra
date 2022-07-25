@@ -1,0 +1,18 @@
+{
+    "_id": "_design/notificationAddRemoveLogEntry",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'notification-add-remove-log-entry') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'notification-add-remove-log-entry') { emit(doc._id, doc); } }"
+        },
+        "duuzraUuid":{
+            "map": "function (doc) { if (doc.type == 'notification-add-remove-log-entry') { emit(doc.duuzraUuid, doc); } }"
+        },
+        "duuzraUuid_viewed":{
+            "map": "function (doc) { if (doc.type == 'notification-add-remove-log-entry') { emit([doc.duuzraUuid, doc.viewed], doc); } }"
+        }
+    }
+}

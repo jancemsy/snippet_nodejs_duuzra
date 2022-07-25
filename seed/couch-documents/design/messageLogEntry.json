@@ -1,0 +1,18 @@
+{
+    "_id": "_design/messageLogEntry",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'message-log-entry') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'message-log-entry') { emit(doc._id, doc); } }"
+        },
+        "timeStamp": {
+            "map": "function(doc) { if (doc.type == 'message-log-entry') { emit(doc.timeStamp, doc); } }"
+        },
+        "recipientAttendeeUuid_timeStamp": {
+            "map": "function(doc) { if (doc.type == 'message-log-entry') { emit([doc.recipientAttendeeUuid, doc.timeStamp], doc); } }"
+        }
+    }
+}

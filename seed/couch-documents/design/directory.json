@@ -1,0 +1,18 @@
+{
+   "_id": "_design/directory",
+   "language": "javascript",
+   "views": {
+       "all": {
+           "map": "function (doc) { if (doc.type == 'directory') { emit(null, doc); } }"
+       },
+       "eventId": {
+           "map": "function (doc) { if (doc.type == 'directory') { emit(doc.eventId, doc); } }"
+       },
+       "directoryId": {
+           "map": "function (doc) { if (doc.type == 'directory') { emit(doc._id, doc); } }"
+       },
+       "directoryListId": {
+           "map": "function (doc) { if (doc.type == 'directory') { emit(doc.directoryListId, doc); } }"
+       }
+   }
+}

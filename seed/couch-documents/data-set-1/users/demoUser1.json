@@ -1,0 +1,22 @@
+{
+  "_id": "auth-user_13d4-11e7-93ae-92361f002671",
+  "type": "auth-user", 
+  "email": "demo1@duuzra.com",
+  "password": "$2a$10$gntQGyFxAwsu6xLYCUeCs./jtAQc8oIkbm.zndEzUHU0mbWmeIN/u",
+  "createdBy": null,
+  "permissions": {
+    "canAddUsers" :  true 
+  },
+  "claims": [
+    "duuzra.role.cms.admin",
+    "duuzra.client.c99a8cc0-2b44-11e7-93ae-92361f002671"
+  ],  
+  "firstname": "cat",
+  "lastname": "g",
+  "dateCreated": "2018-03-07 01:10:21",
+  "isAttendee": false, 
+  "settings": {
+    "menuPerPage": 0,
+    "menuStyle": "Inline"
+  }
+}

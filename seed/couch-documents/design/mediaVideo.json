@@ -1,0 +1,12 @@
+{
+  "_id": "_design/mediaVideo",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function (doc) { \n  if (doc.type == 'media-video') {emit(null, doc);}}"
+    },
+    "id": {
+      "map": "function (doc) { \n  if (doc.type == 'media-video') {emit(doc._id, doc);}}"
+    }
+  }
+}

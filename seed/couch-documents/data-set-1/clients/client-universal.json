@@ -1,0 +1,31 @@
+{
+    "_id": "duuzra-client_c99a8b3a-2b44-11e7-93ae-92361f002671",
+    "type": "duuzra-client",
+    "info": {
+        "name": "Universal"
+    },
+    "accounts": [
+        {
+            "uuid": "c99a9454-2b44-11e7-93ae-92361f002671",
+            "name": "Universal Pictures"
+        },
+        {
+            "uuid": "c99a92ce-2b44-11e7-93ae-92361f002671",
+            "name": "Universal Resorts"
+        }
+    ],
+    "media": [
+       
+    ],
+    "folders": [
+        {
+            "uuid": "c99a8cc0-2b44-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "c99a9454-2b44-11e7-93ae-92361f002671",
+            "title": "Back To The Future",
+            "duuzraUuids": [
+                "18d9c6fc-1916-11e7-93ae-92361f002671"
+            ]
+        }
+    ]
+}

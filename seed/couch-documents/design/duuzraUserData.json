@@ -1,0 +1,18 @@
+{
+  "_id": "_design/duuzraUserData",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-userdata') {\n        emit(null, doc);\n    }\n}"
+    },
+    "id": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-userdata') {\n        emit(doc._id, doc);\n    }\n}"
+    },
+    "id_duuzraUuid": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-userdata') {\n        for (var idx in doc.userData) {\n            emit([doc._id,doc.userData[idx].duuzraUuid], doc.userData[idx]);\n        }\n    }\n}"
+    },
+    "duuzraUuid_type": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-userdata') {\n        for (var idx in doc.userData) {\n            emit([doc.userData[idx].duuzraUuid,doc.userData[idx].type], doc.userData[idx]);\n        }\n    }\n}"
+    }
+  }
+}

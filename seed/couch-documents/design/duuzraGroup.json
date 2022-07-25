@@ -1,0 +1,15 @@
+{
+  "_id": "_design/duuzraGroup",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-duuzra') {        for (var idx in doc.groups) {            emit(null, doc.groups[idx]);        }    }}"
+    },
+    "uuid": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-duuzra') {        for (var idx in doc.groups) {            emit(doc.groups[idx].uuid, doc.groups[idx]);        }    }}"
+    },
+    "duuzraId": {
+      "map": "function(doc) {if (doc.type === 'duuzra-duuzra') {emit(doc._id, doc.groups);}}"
+    }
+  }
+}

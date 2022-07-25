@@ -1,0 +1,21 @@
+{
+    "_id": "_design/duuzraPollResult",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'analytic-poll-result') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'analytic-poll-result') { emit(doc._id, doc); } }"
+        },
+        "identifier": {
+            "map": "function(doc) { if (doc.type == 'analytic-poll-result') { emit(doc.identifier, doc); } }"
+        },
+        "duuzraUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-poll-result') { emit(doc.duuzraUuid, doc); } }"
+        },
+        "contentUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-poll-result') { emit(doc.contentUuid, doc); } }"
+        }
+    }
+}

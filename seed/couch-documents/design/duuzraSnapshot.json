@@ -1,0 +1,36 @@
+{
+  "_id": "_design/duuzraSnapshot",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) { if (doc.type == 'duuzra-snapshot') {  for(var idx in doc.snapshots) { emit(doc._id, doc.snapshots[idx]); }}}"
+    },
+    "user-date": {
+      "map": "function(doc) {    if (doc.type == 'duuzra-snapshot') {        for (var idx in doc.snapshots) {            for (var idx2 in doc.snapshots[idx].users) {                emit([doc.snapshots[idx].users[idx2],doc.snapshots[idx].dateCreated], doc.snapshots[idx]);            }        }    }}"
+    },
+    "docId": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-snapshot') {        emit(doc._id, doc);    }}"
+    },
+    "uuid": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-snapshot') {        for (var idx in doc.snapshots) {            emit(doc.snapshots[idx].uuid, doc.snapshots[idx]);        }    }}"
+    },
+    "draft": {
+      "map": "function(doc) {    if (doc.type == 'duuzra-snapshot') {        for (var idx in doc.snapshots) {            if (doc.snapshots[idx].isDraft) {                emit(doc.snapshots[idx].duuzraUuid, doc.snapshots[idx]);            }        }    }}"
+    },
+    "duuzraUuid": {
+      "map": "function (doc) { if (doc.type === 'duuzra-snapshot') {        for (var idx in doc.snapshots) {            emit(doc.snapshots[idx].duuzraUuid, doc.snapshots[idx]);        }    }}"
+    },
+    "pin-code": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-snapshot') {        for (var idx in doc.snapshots) {          if(doc.snapshots[idx].security && doc.snapshots[idx].security.pinCode) {            emit(doc.snapshots[idx].security.pinCode, doc.snapshots[idx]);          }        }    }}"
+    },
+    "url-token": {
+      "map": "function(doc) {    if (doc.type === 'duuzra-snapshot') {        for (var idx in doc.snapshots) {          if(doc.snapshots[idx].security && doc.snapshots[idx].security.urlToken) {            emit(doc.snapshots[idx].security.urlToken, doc.snapshots[idx]);          }        }    }}"
+    },
+    "authUuid": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-snapshot' && doc.dateDeleted  == null  ) {\n        for (var idx in doc.snapshots) {\n          for (var prop in doc.snapshots[idx].users) {\n            if (doc.snapshots[idx].users.hasOwnProperty(prop)) {\n              emit(prop, doc.snapshots[idx]);\n            }\n          }\n        }\n    }\n}"
+    },
+    "authUuid_duuzraUuid": {
+      "map": "function(doc) {\n    if (doc.type == 'duuzra-snapshot') {\n        for (var idx in doc.snapshots) {\n          for (var prop in doc.snapshots[idx].users) {\n            if (doc.snapshots[idx].users.hasOwnProperty(prop)) {\n              emit([prop,doc.snapshots[idx].duuzraUuid], doc.snapshots[idx]);\n            }\n          }\n        }\n    }\n}"
+    }
+  }
+}

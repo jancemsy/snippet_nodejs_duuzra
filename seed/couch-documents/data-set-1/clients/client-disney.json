@@ -1,0 +1,77 @@
+{
+    "_id": "duuzra-client_c99a8cc0-2b44-11e7-93ae-92361f002671",
+    "type": "duuzra-client",
+    "info": {
+        "name": "Disney"
+    },
+    "accounts": [
+        {
+            "uuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "name": "Marvel Entertainmen LLC"
+        },
+        {
+            "uuid": "d994c830-2b43-11e7-93ae-92361f002671",
+            "name": "ABC Television Group"
+        },
+        {
+            "uuid": "d994ca10-2b43-11e7-93ae-92361f002671",
+            "name": "ESPN Inc"
+        },
+        {
+            "uuid": "d994cd9e-2b43-11e7-93ae-92361f002671",
+            "name": "Lucas Film LLC"
+        },
+        {
+            "uuid": "d994cbbe-2b43-11e7-93ae-92361f002671",
+            "name": "Walt Disney Parts And Resorts"
+        }
+    ],
+    "media": [
+    ],
+    "folders": [
+        {
+            "uuid": "d994d5fa-2b43-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "Avengers",
+            "duuzraUuids": [
+                "c06cebd0-1919-11e7-a99f-bf037e2d9d0f"
+            ]
+        },
+        {
+            "uuid": "d994d7d0-2b43-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "Captain America",
+            "duuzraUuids": []
+        },
+        {
+            "uuid": "d994d97e-2b43-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "X-Men",
+            "duuzraUuids": []
+        },
+        {
+            "uuid": "c99a9760-2b44-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "Hulk",
+            "duuzraUuids": []
+        },
+        {
+            "uuid": "c99a95da-2b44-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "Iron Man",
+            "duuzraUuids": []
+        },
+        {
+            "uuid": "d994d0f0-2b43-11e7-93ae-92361f002671",
+            "parentUuid": null,
+            "accountUuid": "1d1112e6-2b42-11e7-93ae-92361f002671",
+            "title": "Spider Man",
+            "duuzraUuids": []
+        }
+    ]
+}

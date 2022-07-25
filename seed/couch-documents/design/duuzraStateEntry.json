@@ -1,0 +1,18 @@
+{
+    "_id": "_design/duuzraStateEntry",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'duuzra-state-entry') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'duuzra-state-entry') { emit(doc._id, doc); } }"
+        },
+        "timeStamp": {
+            "map": "function(doc) { if (doc.type == 'duuzra-state-entry') { emit(doc.timeStamp, doc); } }"
+        },
+        "duuzraUuid_timeStamp": {
+            "map": "function(doc) { if (doc.type == 'duuzra-state-entry') { emit([doc.duuzraUuid, doc.timeStamp], doc); } }"
+        }
+    }
+}

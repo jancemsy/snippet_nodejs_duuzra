@@ -1,0 +1,21 @@
+{
+    "_id": "_design/analyticFeedback",
+    "language": "javascript",
+    "views": {
+        "all": {
+            "map": "function (doc) { if (doc.type == 'analytic-feedback') { emit(null, doc); } }"
+        },
+        "id": {
+            "map": "function (doc) { if (doc.type == 'analytic-feedback') { emit(doc._id, doc); } }"
+        },
+        "userUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-feedback') { emit(doc.userUuid, doc); } }"
+        },
+        "duuzraUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-feedback') { emit(doc.duuzraUuid, doc); } }"
+        },
+        "contentUuid": {
+            "map": "function(doc) { if (doc.type == 'analytic-feedback') { emit(doc.contentUuid, doc); } }"
+        }
+    }
+}

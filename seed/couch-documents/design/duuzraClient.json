@@ -1,0 +1,12 @@
+{
+  "_id": "_design/duuzraClient",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) { if (doc.type === 'duuzra-client') { emit(null, doc);}}"
+    },
+    "id": {
+      "map": "function(doc) { if (doc.type === 'duuzra-client') { emit(doc._id, doc);}}"
+    }
+  }
+}

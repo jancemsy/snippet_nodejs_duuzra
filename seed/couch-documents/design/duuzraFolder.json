@@ -1,0 +1,21 @@
+{
+  "_id": "_design/duuzraFolder",
+  "language": "javascript",
+  "views": {
+    "all": {
+      "map": "function(doc) { if (doc.type == 'duuzra-client') { for(var idx in doc.folders) { emit(null, doc.folders[idx]);      }    }}"
+    },
+    "uuid": {
+      "map": "function(doc) { if (doc.type == 'duuzra-client') { for(var idx in doc.folders) { emit(doc.folders[idx].uuid, doc.folders[idx]);      }    }}"
+    },
+    "accountUuid": {
+      "map": "function(doc) { if (doc.type == 'duuzra-client') { for(var idx in doc.folders) { emit(doc.folders[idx].accountUuid, doc.folders[idx]);      }    }}"
+    },
+    "parentUuid": {
+      "map": "function(doc) { if (doc.type == 'duuzra-client') { for(var idx in doc.folders) {  emit(doc.folders[idx].parentUuid, doc.folders[idx]);      }    }}"
+    },
+    "clientId": {
+      "map": "function(doc) { if (doc.type == 'duuzra-client') { for(var idx in doc.folders) { emit(doc._id, doc.folders[idx]);}}}"
+    }
+  }
+}

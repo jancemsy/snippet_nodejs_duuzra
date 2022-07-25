@@ -1,0 +1,3 @@
+The structure of claim document in couch.
+Part of the shared shouch models.
+- Currently in transition to this model
